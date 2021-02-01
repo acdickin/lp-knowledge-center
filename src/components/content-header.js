@@ -1,30 +1,35 @@
 import React from "react"
 
 const ContentHeader = (props) => {
-  // const { body, breadcrumb, title, why_the_product_is_useful, post_tags } = props
-  // const createBreadrumb(breadcrumbs){
-  //   //assuming we somehow get an array names 
-  //   last = breadcrumb.length - 1
-  //   results = breadcrumbs.map((crumb, index) => {
-  //     let value = <a className="breadcrumb-item">{crumb.title}</a>
-  //     if (index !== last) {
-  //       value += " > "
-  //     }
-  //     return value
-  //   })
-  //   return results;
-  // }
+  const { breadCrumbs, title, why_the_product_is_useful } = props
+  // const { body, breadCrumbs, title, why_the_product_is_useful, post_tags } = props
+  const createBreadrumb = (breadCrumbs) => {
+    //assuming we somehow get an array names 
+    console.log(breadCrumbs)
+    if (breadCrumbs) {
+      let last = breadCrumbs.length - 1
+      return breadCrumbs.map((crumb, index) => {
+        console.log(crumb);
+        let title = crumb
+        if (index !== last) {
+          title += " > "
+        }
+
+        return <span className="breadcrumb-item" key={crumb.title}>{title}</span>
+      })
+    }
+  }
   // const createTags(Tags){
 
   //   return results;
   // }
   return (
     <>
-      {/* { createBreadrumb(breadcrumb)} */}
-      {/* <div className="h1"> {title.value} </div>
-      <div id="subtitle"> {why_the_product_is_useful.value} </div> */}
+      { createBreadrumb(breadCrumbs)}
+      <h1> {title.value} </h1>
+      <div id="subtitle" dangerouslySetInnerHTML={{ __html: why_the_product_is_useful.value }} />
       {/* { createTags(tags)} */}
-      Content Header
+
     </>
   )
 }

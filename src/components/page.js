@@ -1,17 +1,17 @@
 import React from "react"
-// import ContentHeader from './content-header'
-// import JumpTo from "./jump-to"
-// import { RichText } from "prismic-reactjs";
+import ContentHeader from './content-header'
+import JumpTo from "./jump-to"
 import Layout from "./layout"
+
 const Page = (props) => {
-  console.log(props)
-  // const { body, breadcrumb, title, why_the_product_is_useful, post_tags } = props
+  const { body, title, why_the_product_is_useful, post_tags } = props.pageContext.elements
+  const { breadCrumbs } = props.pageContext;
+
   return (
     <Layout>
-      {/* <ContentHeader breadcrumb={breadcrumb} title={title} why_the_product_is_useful={why_the_product_is_useful} post_tags={post_tags} />
-      {RichText.asText(body.value)}
-      <JumpTo /> */}
-      testing
+      <ContentHeader breadCrumbs={breadCrumbs} title={title} why_the_product_is_useful={why_the_product_is_useful} post_tags={post_tags} />
+      <div dangerouslySetInnerHTML={{ __html: body.value }} />
+      <JumpTo />
     </Layout>
   )
 }

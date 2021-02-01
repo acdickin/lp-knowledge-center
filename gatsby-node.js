@@ -13,29 +13,17 @@ exports.createPages = async ({ graphql, actions }) => {
   // Query data from Kentico
   const result = await graphql(navPagesQuery)
 
-
   const PageBuilder = (nodes, url, breadcrumb, level) => {
-
     nodes.forEach(node => {
       let newUrl = (level > 1) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
-      // FIX THIS ASAP
-      let newBreadCrumb = breadcrumb;
-      newBreadCrumb.push(node.elements.title.value);
-      //fix this
+      let newBreadCrumb = (level > 1) ? breadcrumb + "%" + node.elements.title.value : node.elements.title.value;
       if (node.system.type === "product_overview") {
-        const { body, post_tags, product_description, published, title, url, why_the_product_is_useful } = node.elements;
         createPage({
           path: newUrl,
           component: path.resolve(`./src/components/page.js`),
           context: {
-            body: body.value,
-            post_tags: post_tags.value,
-            product_description: product_description.value,
-            published: published.value,
-            title: title.value,
-            url: url.value,
-            why_is_this_useful: why_the_product_is_useful.value,
-            breadCrumb: newBreadCrumb.push(node.elements.title.value)
+            elements: node.elements,
+            breadCrumbs: newBreadCrumb.split('%')
           },
         })
       }
