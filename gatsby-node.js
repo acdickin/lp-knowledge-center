@@ -15,11 +15,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   const PageBuilder = (nodes, url, breadcrumb, level) => {
-    
+
     nodes.forEach(node => {
       let newUrl = (level > 1) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
+      // FIX THIS ASAP
       let newBreadCrumb = breadcrumb;
       newBreadCrumb.push(node.elements.title.value);
+      //fix this
       if (node.system.type === "product_overview") {
         const { body, post_tags, product_description, published, title, url, why_the_product_is_useful } = node.elements;
         createPage({
@@ -33,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title: title.value,
             url: url.value,
             why_is_this_useful: why_the_product_is_useful.value,
-            breadCrumb: newBreadCrumb
+            breadCrumb: newBreadCrumb.push(node.elements.title.value)
           },
         })
       }
