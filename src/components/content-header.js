@@ -17,10 +17,10 @@ const ContentHeader = (props) => {
     }
   }
   const createTags = (tags) => {
-    console.log(tags)
-    if (tags) {
-      tags.forEach(tag => {
-        return (<div className={"indicator" + tag.name} > { tag.name}</div >)
+    if (tags.value) {
+      return tags.value.map(tag => {
+        console.log(tag.name)
+        return <div key={tag.name}>{tag.name}</div >
       })
     }
   }
