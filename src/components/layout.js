@@ -11,6 +11,7 @@ import Header from "./header"
 import Sidebar from "./sidebar"
 import Footer from "./footer"
 import "./layout.css"
+import "../stylesheets/main.scss"
 
 const Layout = ({ children }) => {
   return (
@@ -22,6 +23,5 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
 
 export default Layout
