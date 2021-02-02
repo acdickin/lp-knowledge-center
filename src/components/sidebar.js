@@ -121,6 +121,7 @@ const Sidebar = () => {
     "categorylist",
     "subcategoryfolder",
     "pagesfolder",
+    "level3folder"
   ];
   const LEAF_NAME = [
     "categoryname",
@@ -128,25 +129,24 @@ const Sidebar = () => {
     "page",
     "level3"
   ];
+
+
   const renderSubItem = (items, url, level) => {
     console.log("items", items);
     return items.map(node => {
-      console.log("node", node.system.codename)
-      console.log("level", level)
       let newUrl = (level > 0) ? node.system.codename.value : url + node.system.codename.value;
       if (node.system.type === "navigation_item") {
         return (
-          <ul className={FOLDER_NAME[level]}>
-            <li class="categoryfolder">
-              <div class="itemdetails canOpen">
-                <span>{node.elements.title.value}</span>
-              </div>
+          <li class={FOLDER_NAME[level]}>
+            <div class="itemdetails canOpen">
+              <span>{node.elements.title.value}</span>
+            </div>
+            <ul>
               {renderSubItem(node.elements.subitems.value, newUrl, level + 1)}
-            </li>
-          </ul>
+            </ul>
+          </li>
         )
       } else {
-
         return (
           <li class={LEAF_NAME[level]}>
             <span><a href={"/" + newUrl}>{node.elements.title.value}</a></span>
@@ -154,12 +154,10 @@ const Sidebar = () => {
         )
       }
     })
-
   }
 
   return (
     <div>
-      Sidebar
       <ul id="mysidebar">
         {renderSubItem(data.allKontentItemNavigationItem.nodes[0].elements.subitems.value, '', 0)}
       </ul>
