@@ -134,11 +134,14 @@ const Sidebar = () => {
   const renderSubItem = (items, url, level) => {
     console.log("items", items);
     return items.map(node => {
-      let newUrl = (level > 0) ? node.system.codename.value : url + node.system.codename.value;
+      console.log("url", url)
+      console.log("codename", node.system.codename)
+      let newUrl = (level > 0) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
+      console.log("newUrl", newUrl)
       if (node.system.type === "navigation_item") {
         return (
-          <li class={FOLDER_NAME[level]}>
-            <div class="itemdetails canOpen">
+          <li className={FOLDER_NAME[level]}>
+            <div className="itemdetails canOpen">
               <span>{node.elements.title.value}</span>
             </div>
             <ul>
@@ -148,7 +151,7 @@ const Sidebar = () => {
         )
       } else {
         return (
-          <li class={LEAF_NAME[level]}>
+          <li className={LEAF_NAME[level]}>
             <span><a href={"/" + newUrl}>{node.elements.title.value}</a></span>
           </li >
         )
