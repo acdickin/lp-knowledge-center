@@ -7,7 +7,6 @@ const ContentHeader = (props) => {
     if (breadCrumbs) {
       let last = breadCrumbs.length - 1
       return breadCrumbs.map((crumb, index) => {
-        console.log(crumb);
         let title = crumb
         if (index !== last) {
           title += " > "
@@ -19,7 +18,6 @@ const ContentHeader = (props) => {
   const createTags = (tags) => {
     if (tags.value) {
       return tags.value.map(tag => {
-        console.log(tag.name)
         return <div key={tag.name}>{tag.name}</div >
       })
     }

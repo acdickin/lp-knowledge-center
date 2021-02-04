@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
     let breadcrumb = new Array()
     //TODO
     //Get rid of level by passing the subitems of root instead of root itself
-    PageBuilder(node.elements.subitems.value, url, breadcrumb, 1)
+    pageBuilder(node.elements.subitems.value, url, breadcrumb, 1)
   })
 }
 

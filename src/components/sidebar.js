@@ -118,7 +118,7 @@ const Sidebar = () => {
   }`
   );
   const FOLDER_NAME = [
-    "categorylist",
+    "categoryfolder",
     "subcategoryfolder",
     "pagesfolder",
     "level3folder"
@@ -132,12 +132,8 @@ const Sidebar = () => {
 
 
   const renderSubItem = (items, url, level) => {
-    console.log("items", items);
     return items.map(node => {
-      console.log("url", url)
-      console.log("codename", node.system.codename)
       let newUrl = (level > 0) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
-      console.log("newUrl", newUrl)
       if (node.system.type === "navigation_item") {
         return (
           <li className={FOLDER_NAME[level]}>
