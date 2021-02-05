@@ -11,10 +11,17 @@ import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const page = {
+    display: 'flex'
+  }
+
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <div style={page}>
+        <Sidebar />
+        <main>{children}</main>
+      </div>
       <Footer />
     </>
   )
