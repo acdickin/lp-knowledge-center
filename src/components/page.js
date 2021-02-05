@@ -1,5 +1,4 @@
 import React from "react"
-import Sidebar from "./sidebar"
 import ContentHeader from './content-header'
 import JumpTo from "./jump-to"
 import Layout from "./layout"
