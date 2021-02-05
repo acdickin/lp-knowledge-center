@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import $ from "jquery";
+import scrollTo from 'gatsby-plugin-smoothscroll';
+
 const JumpTo = () => {
 
   const [anchorList, setAnchorList] = useState([])
@@ -17,9 +19,10 @@ const JumpTo = () => {
     populateAnchors();
   }, [])
 
+
   const renderAnchorlist = () => {
     console.log(anchorList)
-    return anchorList.map(anchor => <li><a className="anchoritem" key={anchor.id} data-scroll href={"#" + anchor.id}>{anchor.text}</a></li>)
+    return anchorList.map(anchor => <li key={anchor.id} className="anchoritem" tabIndex="-1" onClick={() => { console.log("scroll"); scrollTo("#" + anchor.id) }}>{anchor.text}</li>)
   }
   const jumpto = {
     flex: 1
@@ -28,6 +31,7 @@ const JumpTo = () => {
     position: "sticky",
     top: "200px"
   }
+
   return (
     <div style={jumpto}>
       <ul style={jumptoList}>
@@ -35,6 +39,5 @@ const JumpTo = () => {
       </ul>
     </div>
   )
-
 }
 export default JumpTo;
