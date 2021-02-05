@@ -21,10 +21,19 @@ const JumpTo = () => {
     console.log(anchorList)
     return anchorList.map(anchor => <li><a className="anchoritem" key={anchor.id} data-scroll href={"#" + anchor.id}>{anchor.text}</a></li>)
   }
+  const jumpto = {
+    flex: 1
+  }
+  const jumptoList = {
+    position: "sticky",
+    top: "200px"
+  }
   return (
-    <ul className="anchorlist">
-      {(anchorList.length > 0) ? renderAnchorlist() : ""}
-    </ul>
+    <div style={jumpto}>
+      <ul style={jumptoList}>
+        {(anchorList.length > 0) ? renderAnchorlist() : ""}
+      </ul>
+    </div>
   )
 
 }
