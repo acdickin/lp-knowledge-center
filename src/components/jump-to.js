@@ -24,16 +24,14 @@ const JumpTo = () => {
     console.log(anchorList)
     return anchorList.map(anchor => <li key={anchor.id} className="anchoritem" tabIndex="-1" onClick={() => { console.log("scroll"); scrollTo("#" + anchor.id) }}>{anchor.text}</li>)
   }
-  const jumpto = {
-    flex: 1
-  }
+
   const jumptoList = {
     position: "sticky",
     top: "200px"
   }
 
   return (
-    <div style={jumpto}>
+    <div>
       <ul style={jumptoList}>
         {(anchorList.length > 0) ? renderAnchorlist() : ""}
       </ul>

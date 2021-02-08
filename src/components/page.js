@@ -7,13 +7,9 @@ const Page = (props) => {
   const { body, title, why_the_product_is_useful, post_tags } = props.pageContext.elements
   const { breadCrumbs } = props.pageContext;
 
-  const middle = {
-    flex: 4
-  }
-
   return (
     <Layout>
-      <div style={middle}>
+      <div>
         <ContentHeader breadCrumbs={breadCrumbs} title={title} why_the_product_is_useful={why_the_product_is_useful} post_tags={post_tags} />
         <div dangerouslySetInnerHTML={{ __html: body.value }} />
       </div>
