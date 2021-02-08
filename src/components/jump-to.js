@@ -5,7 +5,6 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 const JumpTo = () => {
 
   const [anchorList, setAnchorList] = useState([])
-  const [scrollY, setScrollY] = useState(0);
 
   const populateAnchors = () => {
     setAnchorList([]);
@@ -15,23 +14,10 @@ const JumpTo = () => {
       setAnchorList(preArray => [...preArray, { text: $(this).text(), id: $(this).attr("id") }])
     })
   }
-  function logit() {
-    setScrollY(window.pageYOffset);
-    console.log(new Date().getTime());
-  }
+
   useEffect(() => {
     populateAnchors();
   }, [])
-  useEffect(() => {
-    function watchScroll() {
-      window.addEventListener("scroll", logit);
-    }
-    watchScroll();
-    return () => {
-      window.removeEventListener("scroll", logit);
-    };
-  })
-
 
   const renderAnchorlist = () => {
     console.log(anchorList)
