@@ -1,3 +1,4 @@
-div#defaultheader {
-    border-bottom: 1px solid;
-}
+@import './components/sidebar';
+@import './components/layout';
+@import './components/variables';
+@import './components/footer';

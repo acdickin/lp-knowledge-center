@@ -158,7 +158,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="mysidebar">
+    <div className="mysidebar sidebar">
       Sidebar
       <ul id="mysidebar">
         {renderSubItem(data.allKontentItemNavigationItem.nodes[0].elements.subitems.value, '', 0)}

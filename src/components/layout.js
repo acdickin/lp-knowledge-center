@@ -16,10 +16,12 @@ import "../stylesheets/main.scss"
 const Layout = ({ children }) => {
   return (
     <>
+    <div className="grid-container">
       <Header />
       <Sidebar />
-      <main>{children}</main>
+      <main className="content">{children}</main>
       <Footer />
+      </div>
     </>
   )
 }
