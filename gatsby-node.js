@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Query data from Kentico
   const result = await graphql(navPagesQuery)
 
-  const PageBuilder = (nodes, url, breadcrumb, level) => {
+  const pageBuilder = (nodes, url, breadcrumb, level) => {
     nodes.forEach(node => {
       let newUrl = (level > 1) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
       let newBreadCrumb = (level > 1) ? breadcrumb + "%" + node.elements.title.value : node.elements.title.value;
@@ -28,7 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
         })
       }
       else {
-        if (node.elements.subitems.value.length > 0) PageBuilder(node.elements.subitems.value, newUrl, newBreadCrumb, level + 1)
+        if (node.elements.subitems.value.length > 0) pageBuilder(node.elements.subitems.value, newUrl, newBreadCrumb, level + 1)
       }
     })
   }
@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
     let breadcrumb = new Array()
     //TODO
     //Get rid of level by passing the subitems of root instead of root itself
-    PageBuilder(node.elements.subitems.value, url, breadcrumb, 1)
+    pageBuilder(node.elements.subitems.value, url, breadcrumb, 1)
   })
 }
 
