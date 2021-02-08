@@ -9,7 +9,7 @@ const Page = (props) => {
 
   return (
     <Layout>
-      <div>
+      <div className="main-content">
         <ContentHeader breadCrumbs={breadCrumbs} title={title} why_the_product_is_useful={why_the_product_is_useful} post_tags={post_tags} />
         <div dangerouslySetInnerHTML={{ __html: body.value }} />
       </div>

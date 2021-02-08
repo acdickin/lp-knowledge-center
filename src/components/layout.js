@@ -18,8 +18,8 @@ const Layout = ({ children }) => {
     <>
       <div className="grid-container">
         <Header />
-        <div>
-          <Sidebar />
+        <Sidebar />
+        <div className="content">
           {children}
         </div>
         <Footer />
