@@ -10,6 +10,7 @@ import Header from "./header"
 import Sidebar from "./sidebar"
 import Footer from "./footer"
 import "./layout.css"
+import "../stylesheets/main.scss"
 
 const Layout = ({ children }) => {
   const page = {
@@ -18,15 +19,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
-      <div style={page}>
-        <Sidebar />
-        {children}
+      <div className="grid-container">
+        <Header />
+        <div style={page}>
+          <Sidebar />
+          {children}
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }
-
 
 export default Layout

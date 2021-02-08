@@ -7,7 +7,7 @@ const Footer = () => {
   //Import the specific icons we want 
   //Repalce the I tags
   return (
-    <div id="defaultfooter">
+    <div className="footer flex align-center" id="defaultfooter">
       <div id="footerbottomrow">
         <div id="footertext">
           <span className="footerbottomspan">&copy; {new Date().getFullYear()} LivePerson Inc. All rights reserved.</span>

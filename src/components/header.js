@@ -4,7 +4,7 @@ import React from "react"
 
 const Header = () => {
   return (
-    <div id="defaultheader" style={{
+    <div className="header align-center" style={{
       justifyContent: "space-between",
       display: "flex"
     }}>
