@@ -31,7 +31,7 @@ const JumpTo = () => {
   }
 
   return (
-    <div>
+    <div className="inner-menu">
       <ul style={jumptoList}>
         {(anchorList.length > 0) ? renderAnchorlist() : ""}
       </ul>
