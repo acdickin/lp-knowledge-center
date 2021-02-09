@@ -3,7 +3,6 @@ import $ from "jquery";
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const JumpTo = (props) => {
-  console.log(props)
 
   const [anchorList, setAnchorList] = useState([])
 
@@ -24,10 +23,8 @@ const JumpTo = (props) => {
   useEffect(() => {
     $(window).scroll(function () {
       const mainTitlePostion = $('#maintitle').offset().top;
-      console.log(mainTitlePostion)
       //check the window's position and account for the header
       let position = $(this).scrollTop();
-      console.log(position);
       //for each h2 in the article
       anchorList.forEach(anchor => {
         //if the position of the window is greater than the position of the title (that is, the title has scrolled out of view)
@@ -48,7 +45,6 @@ const JumpTo = (props) => {
   })
 
   const renderAnchorlist = () => {
-    console.log(anchorList)
     // cant have a tag as it breaks the onclick
     return anchorList.map(anchor => <li key={anchor.id} className="anchoritem" tabIndex="-1" name={anchor.id} onClick={() => { scrollTo("#" + anchor.id) }}>{anchor.text}</li>)
   }
