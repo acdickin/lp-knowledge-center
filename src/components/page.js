@@ -25,7 +25,7 @@ const Page = props => {
 
           <div dangerouslySetInnerHTML={{ __html: body.value }} />
         </div>
-        <JumpTo />
+        <JumpTo title={title.value} />
       </div>
     </Layout>
   )
