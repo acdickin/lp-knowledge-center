@@ -63,9 +63,8 @@ const JumpTo = (props) => {
   }
 
   return (
-    <div className="jumpto">
-      <ul style={jumptoList} className="anchorlist">
-
+    <div className="inner-menu">
+      <ul style={jumptoList}>
         {(anchorList.length > 0) ? <li className="active" id="jumptotop" onClick={() => { scrollTo("#maintitle") }}> {props.title}</li> : ""}
         {(anchorList.length > 0) ? renderAnchorlist() : ""}
       </ul>
