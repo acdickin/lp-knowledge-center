@@ -1,4 +1,7 @@
-@import './components/sidebar';
-@import './components/layout';
-@import './components/variables';
-@import './components/footer';
+@import "./components/sidebar";
+@import "./components/layout";
+@import "./components/variables";
+@import "./components/footer";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
