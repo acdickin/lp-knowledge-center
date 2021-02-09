@@ -28,7 +28,7 @@ const JumpTo = (props) => {
       //for each h2 in the article
       anchorList.forEach(anchor => {
         //if the position of the window is greater than the position of the title (that is, the title has scrolled out of view)
-        if (position > anchor.pos) {
+        if (position > anchor.pos + mainTitlePostion) {
           //deactivate all other active links in the anchorlist
           $('.anchorlist > li ').removeClass('active');
           $(`li[name=${anchor.id}]`).addClass('active')
