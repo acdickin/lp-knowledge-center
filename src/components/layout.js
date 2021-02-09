@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
         <Header />
         <div className="flex grow">
           <Sidebar />
-          <div className="flex">{children}</div>
+          <div className="flex column">{children}</div>
         </div>
         <Footer />
       </div>
