@@ -13,14 +13,13 @@ import "./layout.css"
 import "../stylesheets/main.scss"
 
 const Layout = ({ children }) => {
-
   return (
     <>
-      <div className="grid-container">
+      <div className="flex-container">
         <Header />
-        <div>
+        <div className="flex grow">
           <Sidebar />
-          {children}
+          <div className="flex">{children}</div>
         </div>
         <Footer />
       </div>
