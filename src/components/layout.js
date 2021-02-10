@@ -10,16 +10,15 @@ import Header from "./header"
 import Sidebar from "./sidebar"
 import Footer from "./footer"
 import "./layout.css"
-import "../stylesheets/main.scss"
 
 const Layout = ({ children }) => {
   return (
     <>
       <div className="flex-container">
         <Header />
-        <div className="flex grow">
+        <div className="flex grow p-6">
           <Sidebar />
-          <div className="flex column">{children}</div>
+          <div className="flex column p-6">{children}</div>
         </div>
         <Footer />
       </div>

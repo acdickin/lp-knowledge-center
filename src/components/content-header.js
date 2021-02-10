@@ -25,7 +25,7 @@ const ContentHeader = (props) => {
   return (
     <>
       { createBreadrumb(breadCrumbs)}
-      <h1 id="maintitle"> {title.value} </h1>
+      <h1 className="text-4xl" id="maintitle"> {title.value} </h1>
       <div id="subtitle" dangerouslySetInnerHTML={{ __html: why_the_product_is_useful.value }} />
       <div className="indicators">
         {createTags(post_tags)}
