@@ -1,11 +1,51 @@
 require("dotenv").config({
   path: `.env`,
 })
+const myQuery = `
+  {
+    pages: allSitePage {
+      nodes {
+        id
+        path
+        context {
+          elements {
+            body {
+              value
+            }
+            post_tags {
+              value {
+                name
+              }
+            }
+            product_description {
+              value
+            }
+            title {
+              value
+            }
+            url {
+              value
+            }
+            why_the_product_is_useful {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+`
+const queries = [
+  {
+    query: myQuery,
+    transformer: ({ data }) => data.pages.nodes,
+  }
+]
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `KnowledgeCenter`,
+    description: `Liveperson knowledge center`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -47,7 +87,14 @@ module.exports = {
         appId: process.env.AGOLIA_ID,
         apiKey: process.env.ALGOLIA_KEY,
         indexName: process.env.ALGOLIA_INDEX,
-        queries: [],
+        queries,
+        options: {
+          enablePartialUpdates: true,
+        },
+        settings: {
+          searchableAttributes: ['modified'],
+        },
+
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
