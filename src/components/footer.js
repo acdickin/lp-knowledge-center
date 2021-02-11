@@ -1,5 +1,5 @@
 import React from "react"
-
+import Icons from "./icons";
 const Footer = () => {
   //TODO
   //Import font awesome
@@ -24,14 +24,9 @@ const Footer = () => {
               Terms of Use
             </a>
           </div>
+          <Icons />
         </div>
-        {/* <div id="footericons">
-          <a href="http://twitter.com/liveperson"><i className="fab fa-twitter"></i></a>
-          <a href="https://www.facebook.com/liveperson/"><i className="fab fa-facebook"></i></a>
-          <a href="https://www.youtube.com/MyLivePerson"><i className="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/company/liveperson"><i className="fab fa-linkedin-in"></i></a>
-          <a href="http://www.pinterest.com/liveperson/"><i className="fab fa-pinterest"></i></a>
-        </div> */}
+
       </div>
     </div>
   )
