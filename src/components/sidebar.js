@@ -154,11 +154,8 @@ const Sidebar = () => {
       }
     })
   }
-  const sidebar = {
-    flex: 1
-  }
   return (
-    <div style={sidebar}>
+    <div className="sidebar" >
       <ul id="mysidebar">
         {renderSubItem(data.allKontentItemNavigationItem.nodes[0].elements.subitems.value, '', 0)}
       </ul>

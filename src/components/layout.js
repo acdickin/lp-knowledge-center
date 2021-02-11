@@ -12,21 +12,18 @@ import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const page = {
-    display: 'flex'
-  }
-
   return (
     <>
-      <Header />
-      <div style={page}>
-        <Sidebar />
-        {children}
+      <div className="flex-container">
+        <Header />
+        <div className="flex grow p-6">
+          <Sidebar />
+          <div className="flex column p-6">{children}</div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }
-
 
 export default Layout

@@ -1,0 +1,10 @@
+.sidebar {
+    border-right: 1px solid red;
+}
+.inner-menu  {
+    ul.anchorlist {
+        li.anchoritem.active,li#jumptotop.active {
+            font-weight: bolder;
+        }
+    }
+}
