@@ -18,7 +18,6 @@ const Twitter = () => {
     <FontAwesome
       className="fab fa-twitter"
       name="Twitter"
-      size="1x"
     />
   );
 }
@@ -27,7 +26,6 @@ const Facebook = () => {
     <FontAwesome
       className="fab fa-facebook"
       name="Facebook"
-      size="1x"
     />
   );
 }
@@ -36,7 +34,6 @@ const Youtube = () => {
     <FontAwesome
       className="fab fa-youtube"
       name="Youtube"
-      size="1x"
     />
   );
 }
@@ -45,7 +42,6 @@ const LinkedIn = () => {
     <FontAwesome
       className="fab fa-linkedin-in"
       name="LinkedIn"
-      size="1x"
     />
   );
 }
@@ -54,7 +50,6 @@ const Pinterest = () => {
     <FontAwesome
       className="fab fa-pinterest"
       name="Pinterest"
-      size="1x"
     />
   );
 }
