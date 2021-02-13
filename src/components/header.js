@@ -1,9 +1,12 @@
 // import { Link } from "gatsby"
 
 import React from "react"
+import Search from "./search"
 import logo from "../images/lp-logo.svg"
 
 const Header = () => {
+  // TODO Use env vars id 
+  const searchIndices = [{ name: 'KNOWLEDGE', title: 'KNOWLEDGE' }]
   return (
     <div
       className="header align-center"
@@ -17,14 +20,8 @@ const Header = () => {
           <img className="m-0" src={logo} />
         </a>
       </div>
-      <input
-        type="text"
-        id="aa-search-input"
-        className="aa-input-search"
-        placeholder="Search our knowledge center..."
-        name="search"
-        autoComplete="on"
-      />
+      <Search indices={searchIndices} />
+      {/* <input type="text" id="aa-search-input" className="aa-input-search" placeholder="Search our knowledge center..." name="search" autoComplete="on" /> */}
       <div id="homebuttons">
         <span id="login" className="homebutton">
           <a className="text-white" target="_blank" href="https://liveengage.liveperson.net">

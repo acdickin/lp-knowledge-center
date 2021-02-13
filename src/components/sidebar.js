@@ -136,7 +136,7 @@ const Sidebar = () => {
       let newUrl = (level > 0) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
       if (node.system.type === "navigation_item") {
         return (
-          <li className={FOLDER_NAME[level]}>
+          <li key={FOLDER_NAME[level] + node.elements.title.value} className={FOLDER_NAME[level]}>
             <div className="itemdetails canOpen">
               <span>{node.elements.title.value}</span>
             </div>
@@ -147,7 +147,7 @@ const Sidebar = () => {
         )
       } else {
         return (
-          <li className={LEAF_NAME[level]}>
+          <li key={FOLDER_NAME[level] + node.elements.title.value} className={LEAF_NAME[level]}>
             <span><a href={"/" + newUrl}>{node.elements.title.value}</a></span>
           </li >
         )
