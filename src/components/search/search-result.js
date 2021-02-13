@@ -9,6 +9,7 @@ import {
   PoweredBy,
 } from "react-instantsearch-dom"
 const HitCount = connectStateResults(({ searchResults }) => {
+  console.log("Search results", searchResults);
   const hitCount = searchResults && searchResults.nbHits
   return hitCount > 0 ? (
     <div className="HitCount">
@@ -18,7 +19,7 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 const PageHit = ({ hit }) => (
   <div>
-    <Link to={hit.slug}>
+    <Link to={hit.path}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
@@ -32,12 +33,15 @@ const HitsInIndex = ({ index }) => (
     <Hits className="Hits" hitComponent={PageHit} />
   </Index>
 )
-const SearchResult = ({ indices, className }) => (
-  <div className={className}>
-    {indices.map(index => (
-      <HitsInIndex index={index} key={index.name} />
-    ))}
-    <PoweredBy />
-  </div>
-)
+const SearchResult = ({ indices, className }) => {
+  console.log("indices", indices)
+  return (
+    <div className={className}>
+      {indices.map(index => (
+        <HitsInIndex index={index} key={index.name} />
+      ))}
+      <PoweredBy />
+    </div>
+  )
+}
 export default SearchResult

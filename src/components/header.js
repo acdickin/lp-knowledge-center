@@ -2,10 +2,11 @@
 
 import React from "react"
 import Search from "./search"
-const searchIndices = [{ name: `Pages`, title: `Pages` }]
 import logo from "../images/lp-logo.svg"
 
 const Header = () => {
+  // TODO Use env vars id 
+  const searchIndices = [{ name: 'KNOWLEDGE', title: 'KNOWLEDGE' }]
   return (
     <div
       className="header align-center"
@@ -21,14 +22,6 @@ const Header = () => {
       </div>
       <Search indices={searchIndices} />
       {/* <input type="text" id="aa-search-input" className="aa-input-search" placeholder="Search our knowledge center..." name="search" autoComplete="on" /> */}
-      <input
-        type="text"
-        id="aa-search-input"
-        className="aa-input-search"
-        placeholder="Search our knowledge center..."
-        name="search"
-        autoComplete="on"
-      />
       <div id="homebuttons">
         <span id="login" className="homebutton">
           <a className="text-white" target="_blank" href="https://liveengage.liveperson.net">

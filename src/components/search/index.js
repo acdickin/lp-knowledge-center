@@ -15,11 +15,14 @@ export default function Search({ indices }) {
   const rootRef = createRef()
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
+
+  // TODO Use env vars app key and api search key
   const searchClient = algoliasearch(
-    process.env.GATSBY_ALGOLIA_APP_ID,
-    process.env.GATSBY_ALGOLIA_SEARCH_KEY
+    'NMOWIYFP8N',
+    '9d624739425552424b52dc1b71b839e0'
   )
   useClickOutside(rootRef, () => setFocus(false))
+  console.log('Query', query)
   return (
     <ThemeProvider theme={theme}>
       <StyledSearchRoot ref={rootRef}>

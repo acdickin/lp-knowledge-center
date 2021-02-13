@@ -35,10 +35,30 @@ const myQuery = `
     }
   }
 `
+const removeTags = (html) => {
+  return html.replace(/(<([^>]+)>)/ig, '')
+}
+const pageToAlgoliaRecord = (node) => {
+  const { id, path, context } = node
+  if (context !== null && context.elements !== null) {
+
+    return {
+      objectID: id,
+      path,
+      body: removeTags(context.elements.body.value),
+      post_tags: context.elements.post_tags.value.map(value => value.name),
+      product_description: removeTags(context.elements.product_description.value),
+      title: removeTags(context.elements.title.value),
+      url: context.elements.url.value,
+      why_the_product_is_useful: removeTags(context.elements.why_the_product_is_useful.value)
+    }
+  }
+}
 const queries = [
   {
     query: myQuery,
-    transformer: ({ data }) => data.pages.nodes,
+    transformer: ({ data }) => data.pages.nodes.map(pageToAlgoliaRecord).filter(el => el != null),
+    indexName: process.env.ALGOLIA_INDEX
   }
 ]
 
@@ -95,7 +115,7 @@ module.exports = {
           enablePartialUpdates: true,
         },
         settings: {
-          searchableAttributes: ['modified'],
+          searchableAttributes: ['title', 'post_tags', 'product_description', 'why_the_product_is_useful', 'body'],
         },
 
       },
