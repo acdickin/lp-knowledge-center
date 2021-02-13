@@ -9,7 +9,7 @@ const open = css`
 `
 const closed = css`
   width: 0;
-  background: transparent;
+  background: white;
   cursor: pointer;
   margin-left: -1em;
   padding-left: 1em;

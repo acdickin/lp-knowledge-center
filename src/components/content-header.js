@@ -11,14 +11,14 @@ const ContentHeader = (props) => {
         if (index !== last) {
           title += " > "
         }
-        return <span className="breadcrumb-item" key={crumb.title}>{title}</span>
+        return <span key={crumb + index} className="breadcrumb-item" >{title}</span>
       })
     }
   }
   const createTags = (tags) => {
     if (tags.value) {
       return tags.value.map(tag => {
-        return <div key={tag.name}>{tag.name}</div >
+        return <div key={"Tag." + tag.name}>{tag.name}</div >
       })
     }
   }

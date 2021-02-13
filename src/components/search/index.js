@@ -22,7 +22,6 @@ export default function Search({ indices }) {
     '9d624739425552424b52dc1b71b839e0'
   )
   useClickOutside(rootRef, () => setFocus(false))
-  console.log('Query', query)
   return (
     <ThemeProvider theme={theme}>
       <StyledSearchRoot ref={rootRef}>

@@ -9,7 +9,6 @@ import {
   PoweredBy,
 } from "react-instantsearch-dom"
 const HitCount = connectStateResults(({ searchResults }) => {
-  console.log("Search results", searchResults);
   const hitCount = searchResults && searchResults.nbHits
   return hitCount > 0 ? (
     <div className="HitCount">
@@ -34,7 +33,6 @@ const HitsInIndex = ({ index }) => (
   </Index>
 )
 const SearchResult = ({ indices, className }) => {
-  console.log("indices", indices)
   return (
     <div className={className}>
       {indices.map(index => (
