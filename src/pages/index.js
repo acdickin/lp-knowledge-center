@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import "../stylesheets/main.scss"
-import "../stylesheets/components/tailwind.css"
 
 const IndexPage = () => (
   <Layout>
