@@ -1,10 +1,24 @@
 .sidebar {
     border-right: 1px solid red;
-}
-.inner-menu  {
-    ul.anchorlist {
-        li.anchoritem.active,li#jumptotop.active {
-            font-weight: bolder;
+    ul#mysidebar {
+        & > li.categoryfolder {
+            .itemdetails:after {
+                transition: transform 0.25s ease-out;
+                content: "\f054";
+                font-size: 13px;
+                font-family: 'FontAwesome';
+            }
+            &>.canOpen:after {
+                transition: transform 0.25s ease-out;
+                content: "\f078";
+            }
+
+            .itemdetails {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
     }
 }
