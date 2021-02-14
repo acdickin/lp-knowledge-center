@@ -10,7 +10,7 @@ import "../stylesheets/components/tailwind.css"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div className="">
+    <div>
     <h1 className="text-4xl">Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
