@@ -10,9 +10,11 @@ import "../stylesheets/components/tailwind.css"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <div className="">
     <h1 className="text-4xl">Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
+    </div>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
