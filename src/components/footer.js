@@ -1,5 +1,5 @@
 import React from "react"
-import Icons from "./icons";
+import Icons from "./icons"
 const Footer = () => {
   //TODO
   //Import font awesome
@@ -13,7 +13,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.
           </span>
-          <div className="footer-menu">
+          <div className="footer-menu flex justify-between gap-4">
             <a href="https://www.liveperson.com/policies/copyright">
               Copyright
             </a>
@@ -23,10 +23,9 @@ const Footer = () => {
             <a href="https://www.liveperson.com/policies/terms-of-use">
               Terms of Use
             </a>
+            <Icons />
           </div>
-          <Icons />
         </div>
-
       </div>
     </div>
   )

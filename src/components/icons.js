@@ -4,7 +4,7 @@ var FontAwesome = require('react-fontawesome')
 
 const Icons = () => {
   return (
-    <div id="footericons">
+    <div id="footericons" className="flex gap-2 ml-3">
       <a href="http://twitter.com/liveperson"> <Twitter /></a>
       <a href="https://www.facebook.com/liveperson/"> <Facebook /> </a>
       <a href="https://www.youtube.com/MyLivePerson"><Youtube /> </a>
