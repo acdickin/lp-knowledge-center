@@ -1,5 +1,6 @@
 .sidebar {
     ul#mysidebar {
+        list-style-type: none;
         & > li.categoryfolder {
             .itemdetails:after {
                 transition: transform 0.25s ease-out;
