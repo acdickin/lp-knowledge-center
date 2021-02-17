@@ -132,6 +132,7 @@ module.exports = {
         // Please note that with the Sample Project generated above, `en-US` is the default language for the project and this config. For a blank project, this needs to be `default`.
         languageCodenames: [
           `default`, // Or the languages in your project (Project settings -> Localization)
+          `de`
         ],
       },
     },
