@@ -5,3 +5,18 @@
  */
 
 // You can delete this file if you're not using it
+
+
+exports.onClientEntry = () => {
+  const urlArray = window.location.pathname.split('/')
+  const lang = navigator.language
+  console.log("path: ", urlArray)
+  const page = urlArray[urlArray.length - 2]
+  console.log("page:", page);
+
+  if (urlArray.length > 2 && urlArray[1] !== lang && (lang !== "en-US" || lang !== "en")) {
+    const url = `/${lang}/${page}/`
+    console.log("url", url)
+    window.location.pathname = `${url}`
+  }
+}

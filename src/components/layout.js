@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import { Helmet } from "react-helmet"
 import Header from "./header"
 import Sidebar from "./sidebar"
 import Footer from "./footer"
@@ -13,9 +14,9 @@ import "./layout.css"
 const Layout = ({ children }) => {
   return (
     <>
-      <head>
+      <Helmet>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-      </head>
+      </Helmet>
       <div className="flex-container">
         <Header />
         <div className="flex grow">

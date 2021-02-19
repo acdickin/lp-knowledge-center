@@ -15,14 +15,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pageBuilder = (nodes, url, breadcrumb, level) => {
     nodes.forEach(node => {
+
       let newUrl = (level > 1) ? url + "-" + node.system.codename.replace(/_/g, '-') : node.system.codename.replace(/_/g, '-');
       let newBreadCrumb = (level > 1) ? breadcrumb + "%" + node.elements.title.value : node.elements.title.value;
       if (node.system.type === "product_overview") {
+        let lang = `/${node.preferred_language}/`
+        if (node.preferred_language === "en-US") {
+          lang = "/"
+        }
+
         createPage({
-          path: newUrl,
+          path: `${lang}${newUrl}`,
           component: path.resolve(`./src/components/page.js`),
           context: {
             elements: node.elements,
+            language: node.preferred_language,
             breadCrumbs: newBreadCrumb.split('%')
           },
         })
@@ -51,6 +58,7 @@ let navPagesQuery = `
           codename
           type
         }
+        preferred_language
         elements {
           title {
             value
@@ -62,6 +70,7 @@ let navPagesQuery = `
                   codename
                   type
                 }
+                preferred_language
                 elements {
                   title {
                     value
@@ -73,6 +82,7 @@ let navPagesQuery = `
                           codename
                           type
                         }
+                        preferred_language
                         elements {
                           title {
                             value
@@ -84,6 +94,7 @@ let navPagesQuery = `
                                   codename
                                   type
                                 }
+                                preferred_language
                                 elements {
                                   title {
                                     value
@@ -101,6 +112,7 @@ let navPagesQuery = `
                                           codename
                                           type
                                         }
+                                        preferred_language
                                         elements {
                                           body {
                                             value
@@ -136,6 +148,7 @@ let navPagesQuery = `
                                   codename
                                   type
                                 }
+                                preferred_language
                                 elements {
                                   body {
                                     value
@@ -171,6 +184,7 @@ let navPagesQuery = `
                           codename
                           type
                         }
+                        preferred_language
                         elements {
                           body {
                             value
@@ -206,6 +220,7 @@ let navPagesQuery = `
                   codename
                   type
                 }
+                preferred_language
                 elements {
                   body {
                     value
