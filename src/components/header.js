@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <div className="header flex align-center justify-between">
       <div id="logocontainer">
-        <a href="/">
-          <img className="m-0" src={logo} />
+        <a href="/" className="flex">
+          <img src={logo} />
         </a>
       </div>
       <div className="flex align-center justify-between gap-4">
@@ -20,7 +20,7 @@ const Header = () => {
         <div id="homebuttons">
           <span id="login" className="homebutton">
             <a
-              className="text-white"
+              className="flex"
               target="_blank"
               href="https://liveengage.liveperson.net"
             >
