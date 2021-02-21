@@ -12,18 +12,18 @@ import Footer from "./footer"
 const Layoutinner = ({ children }) => {
   return (
     <>
-      <head>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-      </head>
-      <div className="flex-container">
-        <Header />
-        <div className="flex grow">
-          <Sidebar />
-          <div className="flex column p-6 w-full">{children}</div>
-        </div>
-        <Footer />
+    <head>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    </head>
+    <div className="flex-container">
+      <Header />
+      <div className="flex grow">
+        <Sidebar />
+        <div className="flex column p-6 w-full">{children}</div>
       </div>
-    </>
+      <Footer />
+    </div>
+  </>
   )
 }
 
