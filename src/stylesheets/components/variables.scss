@@ -44,7 +44,7 @@ body.light {
   --bg-hero: #f7f7f7;
   --textNormal: #000;
   --textTitle: #090c43;
-  --textLink: blue;
+  --textLink: var(--light-blue);
   --hr: hsla(0, 0%, 0%, 0.2);
 
   background-color: var(--bg);
