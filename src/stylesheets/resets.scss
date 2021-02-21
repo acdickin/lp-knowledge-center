@@ -49,6 +49,7 @@ button,
 select,
 label[for] {
     cursor: pointer;
+    outline: none;
 
     &:disabled {
         cursor: default;
@@ -68,6 +69,7 @@ button {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    color: var(--textNormal);
 }
 
 img,

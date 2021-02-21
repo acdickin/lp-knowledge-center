@@ -4,9 +4,16 @@ import React from "react"
 import Search from "./search"
 import logo from "../images/lp-logo.svg"
 
-const Header = () => {
+var FontAwesome = require("react-fontawesome")
+
+const Header = props => {
   // TODO Use env vars id
   const searchIndices = [{ name: "KNOWLEDGE", title: "KNOWLEDGE" }]
+  const handleMode = () => {
+    return props.mode === "light"
+      ? props.setMode("dark")
+      : props.setMode("light")
+  }
   return (
     <div className="header flex align-center justify-between">
       <div id="logocontainer">
@@ -14,10 +21,13 @@ const Header = () => {
           <img src={logo} />
         </a>
       </div>
-      <div className="flex align-center justify-between gap-4">
+      <div className="flex align-center justify-between gap">
         <Search indices={searchIndices} />
         {/* <input type="text" id="aa-search-input" className="aa-input-search" placeholder="Search our knowledge center..." name="search" autoComplete="on" /> */}
-        <div id="homebuttons">
+        <div className="flex gap" id="homebuttons">
+          <button className="modebtn" onClick={handleMode}>
+            <FontAwesome className="fab fa-adjust" name="Adjust" />
+          </button>
           <span id="login" className="homebutton">
             <a
               className="flex"

@@ -22,7 +22,7 @@
 body {
   font-family: "Roboto", "Helvetica";
   .hero {
-    background: var(--dark-blue);
+    background: var(--bg-hero);
     @media (max-width: 1024px) {
       flex-direction: column;
       img {

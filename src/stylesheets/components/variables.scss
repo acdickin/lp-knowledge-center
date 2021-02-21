@@ -12,7 +12,7 @@
   --space25: calc(25 * var(--space-unit)); // 100px
   // colors
   --primary-color: #090c43;
-  --light-color: #ffffff;
+  --light-color: --textNormal;
   --light-blue: #005ef4;
   --dark-blue: #1d1f52;
 
@@ -24,8 +24,36 @@
   --light-white: #dbdce1;
 }
 
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  transition: all 250ms ease-in;
+  --bg: var(--dark-blue);
+  --bg-hero: #2d3162;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textTitle: white;
+  --textLink: yellow;
+  --hr: hsla(0, 0%, 100%, 0.2);
+  background-color: var(--bg);
+  color: var(--textNormal);
+}
+body.light {
+  transition: all 250ms ease-in;
+  background-color: var(--light-color);
+  color: var(--navy);
+
+  --bg: white;
+  --bg-hero: #f7f7f7;
+  --textNormal: #090c43;
+  --textTitle: #090c43;
+  --textLink: blue;
+  --hr: hsla(0, 0%, 0%, 0.2);
+
+  background-color: var(--bg);
+  color: var(--textNormal);
+}
+
 .divider {
-  background: linear-gradient(to left bottom, #1d1f52 50%, transparent 50.6%);
+  background: linear-gradient(to left bottom, var(--bg-hero) 50%, transparent 50.6%);
   padding: var(--space8);
 }
 
@@ -42,5 +70,5 @@
 }
 
 .gap {
-  gap: 14px
+  gap: 14px;
 }
