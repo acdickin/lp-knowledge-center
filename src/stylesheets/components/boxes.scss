@@ -1,0 +1,11 @@
+.boxes-block {
+    max-width: 1360px;
+    margin: 0 auto;
+    .box {
+        border: 1px solid var(--gray);
+        border-radius: 19px;
+        padding: var(--space12) var(--space8);
+        width: 49%;
+        flex-grow: 1;
+    }
+}
