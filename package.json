@@ -15,6 +15,7 @@
     "gatsby-plugin-algolia": "^0.0.4",
     "gatsby-plugin-google-gtag": "^2.8.0",
     "gatsby-plugin-hotjar": "^1.1.1",
+    "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.6.1",
     "gatsby-plugin-offline": "^3.4.0",
     "gatsby-plugin-postcss": "^3.7.0",

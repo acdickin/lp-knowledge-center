@@ -30,6 +30,7 @@ const myQuery = `
               value
             }
           }
+          language
         }
       }
     }
@@ -41,10 +42,10 @@ const removeTags = (html) => {
 const pageToAlgoliaRecord = (node) => {
   const { id, path, context } = node
   if (context !== null && context.elements !== null) {
-
     return {
       objectID: id,
       path,
+      language: context.language,
       body: removeTags(context.elements.body.value),
       post_tags: context.elements.post_tags.value.map(value => value.name),
       product_description: removeTags(context.elements.product_description.value),
@@ -133,6 +134,7 @@ module.exports = {
         languageCodenames: [
           // Or the languages in your project (Project settings -> Localization)
           `en-US`,
+          `de`
         ],
       },
     },
@@ -152,6 +154,16 @@ module.exports = {
 
       },
     },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en-US',
+        langKeyForNull: 'en-US',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+      },
+    }
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
