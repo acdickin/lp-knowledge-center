@@ -117,6 +117,7 @@ const Sidebar = () => {
     }
   }`
   );
+
   const FOLDER_NAME = [
     "categoryfolder",
     "subcategoryfolder",

@@ -14,6 +14,9 @@ const Header = props => {
       ? props.setMode("dark")
       : props.setMode("light")
   }
+  const toggleExperiance = () => {
+    (props.experiance === "knowledge") ? props.setExperiance("dev") : props.setExperiance("knowledge");
+  }
   return (
     <div className="header flex align-center justify-between">
       <div id="logocontainer">
@@ -22,6 +25,7 @@ const Header = props => {
         </a>
       </div>
       <div className="flex align-center justify-between gap">
+        <h2 onClick={toggleExperiance}>{props.experiance}</h2>
         <Search indices={searchIndices} />
         {/* <input type="text" id="aa-search-input" className="aa-input-search" placeholder="Search our knowledge center..." name="search" autoComplete="on" /> */}
         <div className="flex gap" id="homebuttons">

@@ -1,4 +1,5 @@
 import React from "react"
+import parse from 'html-react-parser';
 
 const ContentHeader = (props) => {
   const { breadCrumbs, title, why_the_product_is_useful, post_tags } = props
@@ -26,11 +27,12 @@ const ContentHeader = (props) => {
     <>
       { createBreadrumb(breadCrumbs)}
       <h1 className="text-4xl" id="maintitle"> {title.value} </h1>
-      <div id="subtitle" dangerouslySetInnerHTML={{ __html: why_the_product_is_useful.value }} />
+      <div id="subtitle">
+        {parse(why_the_product_is_useful.value)}
+      </div>
       <div className="indicators">
         {createTags(post_tags)}
       </div>
-
     </>
   )
 }
