@@ -13,15 +13,17 @@ import SidebarDev from "./sidebar-dev"
 import Footer from "./footer"
 
 const Layout = ({ children }) => {
-  const initialMode = localStorage.getItem('jlmode') || 'light';
-  const initalExperiance = localStorage.getItem('exp') || 'knowledge';
 
+  // The typeof window check is required because gatbsy doesn't recongnize local storage when building
+  let initialMode = (typeof window !== 'undefined') ? window.localStorage.getItem('jlmode') || 'light' : 'light';
+  let initalExperiance = (typeof window !== 'undefined') ? window.localStorage.getItem('exp') || 'knowledge' : 'knowledge';
+
+  if (typeof window !== 'undefined') {
+    useEffect(() => window.localStorage.setItem('jlmode', mode), [mode])
+    useEffect(() => window.localStorage.setItem('exp', experiance), [experiance])
+  }
   const [mode, setMode] = useState(initialMode)
   const [experiance, setExperiance] = useState(initalExperiance)
-
-  useEffect(() => localStorage.setItem('jlmode', mode), [mode])
-  useEffect(() => localStorage.setItem('exp', experiance), [experiance])
-
   return (
     <>
       <Helmet>
