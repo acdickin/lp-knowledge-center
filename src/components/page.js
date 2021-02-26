@@ -3,8 +3,8 @@ import ContentHeader from "./content-header"
 import JumpTo from "./jump-to"
 import Layout from "./layout"
 import parse from 'html-react-parser';
-const Page = props => {
 
+const Page = props => {
   const {
     body,
     title,

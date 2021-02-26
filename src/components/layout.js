@@ -31,7 +31,6 @@ const Layout = ({ children }) => {
         <Header mode={mode} setMode={setMode} setExperiance={setExperiance} experiance={experiance} />
         <div className="flex grow">
           {(experiance === "knowledge") ? < Sidebar /> : <SidebarDev />}
-
           <div className="flex column p-6 w-full">{children}</div>
         </div>
         <Footer />

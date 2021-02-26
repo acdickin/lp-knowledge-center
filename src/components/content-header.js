@@ -1,5 +1,6 @@
 import React from "react"
 import parse from 'html-react-parser';
+
 const ContentHeader = (props) => {
   const { breadCrumbs, title, why_the_product_is_useful, post_tags } = props
 
@@ -32,7 +33,6 @@ const ContentHeader = (props) => {
       <div className="indicators">
         {createTags(post_tags)}
       </div>
-
     </>
   )
 }
