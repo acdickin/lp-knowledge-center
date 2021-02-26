@@ -18,12 +18,12 @@ const Layout = ({ children }) => {
   let initialMode = (typeof window !== 'undefined') ? window.localStorage.getItem('jlmode') || 'light' : 'light';
   let initalExperiance = (typeof window !== 'undefined') ? window.localStorage.getItem('exp') || 'knowledge' : 'knowledge';
 
-  if (typeof window !== 'undefined') {
-    useEffect(() => window.localStorage.setItem('jlmode', mode), [mode])
-    useEffect(() => window.localStorage.setItem('exp', experiance), [experiance])
-  }
   const [mode, setMode] = useState(initialMode)
   const [experiance, setExperiance] = useState(initalExperiance)
+
+  useEffect(() => (typeof window !== 'undefined') ? window.localStorage.setItem('jlmode', mode) : null, [mode])
+  useEffect(() => (typeof window !== 'undefined') ? window.localStorage.setItem('exp', experiance) : null, [experiance])
+
   return (
     <>
       <Helmet>
