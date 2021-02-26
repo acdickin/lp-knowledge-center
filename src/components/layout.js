@@ -21,7 +21,14 @@ const Layout = ({ children }) => {
   const [mode, setMode] = useState(initialMode)
   const [experiance, setExperiance] = useState(initalExperiance)
 
-  useEffect(() => (typeof window !== 'undefined') ? window.localStorage.setItem('jlmode', mode) : null, [mode])
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.body.classList.remove('light');
+      document.body.classList.remove('dark');
+      document.body.classList.add(mode);
+      window.localStorage.setItem('jlmode', mode)
+    }
+  }, [mode])
   useEffect(() => (typeof window !== 'undefined') ? window.localStorage.setItem('exp', experiance) : null, [experiance])
 
   return (
@@ -29,7 +36,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
       </Helmet>
-      <div className={"flex-container " + mode}>
+      <div className="flex-container">
         <Header mode={mode} setMode={setMode} setExperiance={setExperiance} experiance={experiance} />
         <div className="flex grow">
           {(experiance === "knowledge") ? < Sidebar /> : <SidebarDev />}
