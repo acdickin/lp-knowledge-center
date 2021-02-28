@@ -14,8 +14,8 @@ const Page = props => {
   const { breadCrumbs } = props.pageContext
   return (
     <Layout>
-      <div className="flex">
-        <div>
+      <div className="content flex">
+        <div className="inner-content full-width">
           <ContentHeader
             breadCrumbs={breadCrumbs}
             title={title}
