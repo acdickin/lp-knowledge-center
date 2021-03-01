@@ -1,0 +1,11 @@
+.home.lp-content {
+  .content {
+    .sidebar {
+      max-width: initial;
+      ul#mysidebar {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+}
