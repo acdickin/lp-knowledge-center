@@ -51,12 +51,12 @@ const JumpTo = (props) => {
 
   const jumptoList = {
     position: "sticky",
-    top: "200px",
+    top: "100px",
     listStyleType: "none"
   }
 
   return (
-    <div className="inner-menu full-width p-6">
+    <div className="inner-menu full-width">
       <ul style={jumptoList} className="anchorlist">
         {(anchorList.length > 0) ? <li className="active" id="jumptotop" onClick={() => { scrollTo("#maintitle") }}> {props.title}</li> : ""}
         {(anchorList.length > 0) ? renderAnchorlist() : ""}

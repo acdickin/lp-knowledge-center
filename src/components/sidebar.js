@@ -156,7 +156,7 @@ const Sidebar = () => {
     })
   }
   return (
-    <div className="sidebar block flex-wrap list-none mb-0 mt-0 bg-blue-navy" >
+    <div className="sidebar block flex-wrap list-none" >
       <ul id="mysidebar">
         {renderSubItem(data.allKontentItemNavigationItem.nodes[0].elements.subitems.value, '', 0)}
       </ul>

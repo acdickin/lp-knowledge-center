@@ -50,12 +50,30 @@ body {
 .header {
   grid-area: header;
 }
+.lp-content {
+  flex-basis: 100%;
+}
 .sidebar {
   grid-area: sidebar;
+  flex-basis: 25%;
+  max-width: 300px;
+  @media (max-width: 767px) {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 .content {
   grid-area: content;
-  display: flex;
+  flex-basis: 75%;
+  @media (max-width: 767px) {
+    flex-basis: 100%;
+  }
+}
+.inner-menu {
+  flex-basis: 25%;
+  @media (max-width: 767px) {
+    flex-basis: 100%;
+  }
 }
 .footer {
   grid-area: footer;

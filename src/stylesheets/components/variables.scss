@@ -19,14 +19,12 @@
   --navy: #090c43;
   --electric-blue: #005ef4;
   --periwinkle: #a5b9f3;
-  --orange: #FE5E00;
+  --orange: #fe5e00;
   --gray: #c5c7ce;
   --light-white: #dbdce1;
 }
 
 body.dark {
-  transition: all 250ms ease-in;
-
   --bg: var(--primary-color);
   --bg-hero: var(--dark-blue);
   --textNormal: rgba(255, 255, 255, 0.88);
@@ -38,8 +36,6 @@ body.dark {
   color: var(--textNormal);
 }
 body.light {
-  transition: all 250ms ease-in;
-
   --bg: white;
   --bg-hero: #f7f7f7;
   --textNormal: #000;
