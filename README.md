@@ -1,38 +1,41 @@
+# lp-help-center
 
-## LivePerson Knowledge Center
+To run this project locally you will need to run the backend as well [lp-help-center-backend](https://github.com/acdickin/lp-help-center-backend)
 
-This repository generates LivePerson's Knowledge Center, which can be found at [knowledge.liveperson.com](https://knowledge.liveperson.com/). The site is generated using [Gatsby](https://https://www.gatsbyjs.com/) and data from [Kontent](https://kontent.ai/) 
+## Available Scripts
 
-**This site is maintained by the Product Communications and Experience team. Please contact lmart@liveperson.com for issues, questions, and the such**.
+In the project directory, you can run:
 
-### Building the Site Locally
+### `yarn start`
 
-1. Run `npm install`. This will install all the node packages that the site depends on. Only needs to be run on first install and when changes are made to package.json 
-2. Run `npm start`. This builds the site and serves it over localhost:8000 it also serves grapql tool at http://localhost:8000/___graphql
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-`npm run build`. This builds the `_site` folder without serving it
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Kontnet and Gatsby
-With in the gatsby-config file we call @kentico/gatsby-source-kontent. This is what connects Kontent to gatsby. 
-Using that connection we are able to call the graphql data in gatsby-node and create pages there
-Fore mor information see [Sourcing from Kontico Kontent](https://www.gatsbyjs.com/docs/sourcing-from-kentico-kontent/)
-## Design Documentaiton
-https://docs.google.com/document/d/13vhTXWbNPC0ctPpTTlTWSoehpXP4N6kQkkuqEkHPZm0/edit?usp=sharing
-### Licensing
+### `yarn test`
 
-All usage of the contents, documentation or code found in this repository is subject to the [LivePerson API Terms of Use](https://www.liveperson.com/policies/apitou). Please use the link above to read them carefully before utilizing the site.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 🎓 Learning Gatsby
+### `yarn build`
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## 💫 Deploy
+### `yarn eject`
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
